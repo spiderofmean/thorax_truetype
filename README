@@ -1,0 +1,23 @@
+Thorax Truetype is a library for loading and rendering TrueType fonts.  This
+project grew out of a pedagogical exercise to have an easy to understand
+TrueType loader.  My desire to do so came from stb_truetype being difficult
+to understand due to a lack of C++ features or type punning (the address
+computations required to index into the truetype tables are pretty
+incomprehensible as inline C code) and the size of the opentype loader.
+
+The loader consists of two files:
+  thorax_truetype.h
+  thorax_truetype.cpp
+
+In addition to the font loader, this project contains a font rasterizer in the
+renderer folder.  The rasterizer uses a novel coverage algorithm and is capable
+of generated nicely anti-aliased renderings.
+
+The files in the renderer:
+  build.h         : interface for managing text scenes
+  bvh.cpp         : implementation of bounding volume hierarchy builders
+  drawcontext.h   : context interface for drawing text to a bitmap
+  drawcontext.cpp : context implementation for drawing text to a bitmap
+  types.h         : a variety of helper datatypes
+
+A more detailed description of the rasterizer will come later.
